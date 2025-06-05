@@ -101,7 +101,6 @@ Construct a program that swaps the values of variables <code>x</code> and <code>
 
 ## Testtest
 
-
 <div id="Oh-sortableTrash" class="sortable-code"></div> 
 <div id="Oh-sortable" class="sortable-code"></div> 
 <div style="clear:both;"></div> 
