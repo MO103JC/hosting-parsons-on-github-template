@@ -99,6 +99,43 @@ Construct a program that swaps the values of variables <code>x</code> and <code>
 })();
 </script>
 
+##Testtest
+
+<div id="Oh-sortableTrash" class="sortable-code"></div> 
+<div id="Oh-sortable" class="sortable-code"></div> 
+<div style="clear:both;"></div> 
+<p> 
+    <input id="Oh-feedbackLink" value="Get Feedback" type="button" /> 
+    <input id="Oh-newInstanceLink" value="Reset Problem" type="button" /> 
+</p> 
+<script type="text/javascript"> 
+(function(){
+  var initial = "Test\n" +
+    "Test #distractor";
+  var parsonsPuzzle = new ParsonsWidget({
+    "sortableId": "Oh-sortable",
+    "max_wrong_lines": 10,
+    "grader": ParsonsWidget._graders.LineBasedGrader,
+    "exec_limit": 2500,
+    "can_indent": true,
+    "x_indent": 50,
+    "lang": "en",
+    "show_feedback": true,
+    "trashId": "Oh-sortableTrash"
+  });
+  parsonsPuzzle.init(initial);
+  parsonsPuzzle.shuffleLines();
+  $("#Oh-newInstanceLink").click(function(event){ 
+      event.preventDefault(); 
+      parsonsPuzzle.shuffleLines(); 
+  }); 
+  $("#Oh-feedbackLink").click(function(event){ 
+      event.preventDefault(); 
+      parsonsPuzzle.getFeedback(); 
+  }); 
+})(); 
+</script>
+
 ## Parsons 3 (Unit Test Grader)
 Your task is to construct a function which returns the index of the largest element in the array.
 
@@ -246,38 +283,3 @@ If want each problem to be it's own page, you can use relative path links at the
 ### Example Next Link
 [Next](./parsons/example1.html)
 
-
-<div id="Oh-sortableTrash" class="sortable-code"></div> 
-<div id="Oh-sortable" class="sortable-code"></div> 
-<div style="clear:both;"></div> 
-<p> 
-    <input id="Oh-feedbackLink" value="Get Feedback" type="button" /> 
-    <input id="Oh-newInstanceLink" value="Reset Problem" type="button" /> 
-</p> 
-<script type="text/javascript"> 
-(function(){
-  var initial = "Test\n" +
-    "Test #distractor";
-  var parsonsPuzzle = new ParsonsWidget({
-    "sortableId": "Oh-sortable",
-    "max_wrong_lines": 10,
-    "grader": ParsonsWidget._graders.LineBasedGrader,
-    "exec_limit": 2500,
-    "can_indent": true,
-    "x_indent": 50,
-    "lang": "en",
-    "show_feedback": true,
-    "trashId": "Oh-sortableTrash"
-  });
-  parsonsPuzzle.init(initial);
-  parsonsPuzzle.shuffleLines();
-  $("#Oh-newInstanceLink").click(function(event){ 
-      event.preventDefault(); 
-      parsonsPuzzle.shuffleLines(); 
-  }); 
-  $("#Oh-feedbackLink").click(function(event){ 
-      event.preventDefault(); 
-      parsonsPuzzle.getFeedback(); 
-  }); 
-})(); 
-</script>
