@@ -53,16 +53,26 @@ Construct a program that swaps the values of variables <code>x</code> and <code>
 </p> 
 <script type="text/javascript"> 
 (function(){
-  var initial = "";
+  var initial = "gsgg\n" +
+    "grsgrs #distractor";
   var parsonsPuzzle = new ParsonsWidget({
     "sortableId": "fff-sortable",
     "max_wrong_lines": 10,
-    "grader": ParsonsWidget._graders.LineBasedGrader,
+    "grader": ParsonsWidget._graders.VariableCheckGrader,
     "exec_limit": 2500,
     "can_indent": true,
     "x_indent": 50,
     "lang": "en",
-    "show_feedback": true
+    "show_feedback": true,
+    "trashId": "fff-sortableTrash",
+    "vartests": [
+        {
+            "message": "",
+            "initcode": "",
+            "code": "",
+            "variables": {}
+        }
+    ]
   });
   parsonsPuzzle.init(initial);
   parsonsPuzzle.shuffleLines();
